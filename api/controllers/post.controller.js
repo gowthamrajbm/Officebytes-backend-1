@@ -46,11 +46,9 @@ exports.create_post = (req, res) => {
 };
 
 exports.upload_test = (req, res) => {
-  console.log(__dirname);
-
   var storage = multer.diskStorage({
     destination: function(req, file, cb) {
-      cb(null, path.resolve(__dirname, "uploads"));
+      cb(null, "public/api/controllers/uploads");
     },
     filename: function(req, file, cb) {
       cb(null, Date.now() + "-" + file.originalname);
