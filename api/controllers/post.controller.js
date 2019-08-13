@@ -59,7 +59,7 @@ exports.upload_test = (req, res) => {
   upload(req, res, function(err) {
     if (err) {
       console.log(err);
-      return res.end("Error uploading file.");
+      return res.end(err);
     }
     res.end("File is uploaded");
   });
